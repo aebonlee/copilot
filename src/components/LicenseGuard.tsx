@@ -6,6 +6,7 @@ import { createContext, useContext, useState, useEffect, useCallback, ReactNode 
 import { useLocation } from 'react-router-dom';
 import { supabase } from '../utils/supabase';
 import { SITE_SLUG, FREE_ROUTES } from '../config/license';
+import { isAdmin as isAdminEmail } from '../config/admin';
 
 interface LicenseContextType {
   isFirstVisit: boolean;
@@ -67,8 +68,8 @@ export function LicenseProvider({ children }: { children: ReactNode }) {
         return;
       }
 
-      const email = (user.email || '').toLowerCase();
-      if (email === 'aebon@kakao.com' || email === 'aebon@kyonggi.ac.kr') {
+      // 최고관리자는 모든 콘텐츠 접근 가능
+      if (isAdminEmail(user.email)) {
         setHasLicense(true);
         setLicenseLoading(false);
         return;
