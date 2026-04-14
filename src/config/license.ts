@@ -13,5 +13,6 @@ export const FREE_ROUTES: string[] = [
   '/automation',
   '/prompt-eval',
   '/prompt-eval/practice',
+  '/prompt-eval/workshop',
   '/resources',
 ];

@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { path: '/github-copilot', ko: 'GitHub Copilot', en: 'GitHub Copilot' },
   { path: '/m365-copilot', ko: 'M365 Copilot', en: 'M365 Copilot' },
   { path: '/automation', ko: '업무자동화', en: 'Automation' },
-  { path: '/prompt-eval', ko: '프롬프트평가', en: 'Prompt Eval' },
+  { path: '/prompt-eval', ko: '프롬프트 실습', en: 'Prompt Lab' },
   { path: '/resources', ko: '자료실', en: 'Resources' },
   { path: '/community', ko: '커뮤니티', en: 'Community' },
 ];

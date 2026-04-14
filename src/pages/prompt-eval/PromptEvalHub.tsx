@@ -14,22 +14,34 @@ export default function PromptEvalHub() {
   return (
     <>
       <GuidePage
-        seoTitle="프롬프트평가"
-        seoTitleEn="Prompt Evaluation"
+        seoTitle="프롬프트 실습"
+        seoTitleEn="Prompt Lab"
         seoDescription="프롬프트 작성 기법, 평가 기준, 실전 예시 및 실습 가이드"
         path="/prompt-eval"
         dataFiles={[promptBasics, promptEvaluation, promptTechniques, promptExamples]}
         ctaBanner={
-          <div className="prompt-practice-cta">
-            <div className="prompt-practice-cta-text">
-              <h3>{isKo ? '프롬프트 실력을 테스트해보세요!' : 'Test your prompt skills!'}</h3>
-              <p>{isKo ? '선택형 퀴즈 + 프롬프트 평가 + 직접 작성까지, 250점 만점 실습을 진행하세요.' : 'Take a 250-point practice: quiz + evaluation + writing exercises.'}</p>
+          <>
+            <div className="prompt-practice-cta">
+              <div className="prompt-practice-cta-text">
+                <h3>{isKo ? '프롬프트 작성 평가' : 'Prompt Writing Evaluation'}</h3>
+                <p>{isKo ? '프롬프트를 직접 작성하고 SCORE 기준으로 자동 채점! 수정하며 점수 변화를 확인하세요.' : 'Write prompts and get auto-scored! Edit and track your score improvements.'}</p>
+              </div>
+              <Link to="/prompt-eval/workshop" className="prompt-practice-cta-btn">
+                <i className="fa-solid fa-wand-magic-sparkles" />
+                {isKo ? '작성 평가 시작' : 'Start Workshop'}
+              </Link>
             </div>
-            <Link to="/prompt-eval/practice" className="prompt-practice-cta-btn">
-              <i className="fa-solid fa-pen-to-square" />
-              {isKo ? '실습 시작' : 'Start Practice'}
-            </Link>
-          </div>
+            <div className="prompt-practice-cta" style={{ background: 'linear-gradient(135deg, rgba(56,161,105,0.08), rgba(56,161,105,0.02))', borderColor: 'rgba(56,161,105,0.2)' }}>
+              <div className="prompt-practice-cta-text">
+                <h3>{isKo ? '종합 실습 테스트' : 'Full Practice Test'}</h3>
+                <p>{isKo ? '선택형 퀴즈 + 프롬프트 평가 + 직접 작성까지, 250점 만점 종합 실습을 진행하세요.' : 'Take a 250-point practice: quiz + evaluation + writing exercises.'}</p>
+              </div>
+              <Link to="/prompt-eval/practice" className="prompt-practice-cta-btn" style={{ background: '#38a169' }}>
+                <i className="fa-solid fa-clipboard-check" />
+                {isKo ? '종합 실습 시작' : 'Start Practice'}
+              </Link>
+            </div>
+          </>
         }
       />
     </>

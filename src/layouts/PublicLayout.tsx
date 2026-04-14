@@ -16,6 +16,7 @@ const M365Hub = lazy(() => import('../pages/M365Hub'));
 const AutomationHub = lazy(() => import('../pages/AutomationHub'));
 const PromptEvalHub = lazy(() => import('../pages/prompt-eval/PromptEvalHub'));
 const PromptPractice = lazy(() => import('../pages/prompt-eval/PromptPractice'));
+const PromptWorkshop = lazy(() => import('../pages/prompt-eval/PromptWorkshop'));
 const ResourceLibrary = lazy(() => import('../pages/resources/ResourceLibrary'));
 const CommunityHub = lazy(() => import('../pages/community/CommunityHub'));
 const Board = lazy(() => import('../pages/community/Board'));
@@ -64,6 +65,7 @@ export default function PublicLayout() {
             {/* Prompt Evaluation */}
             <Route path="/prompt-eval" element={<PromptEvalHub />} />
             <Route path="/prompt-eval/practice" element={<PromptPractice />} />
+            <Route path="/prompt-eval/workshop" element={<PromptWorkshop />} />
             {/* Resources */}
             <Route path="/resources" element={<ResourceLibrary />} />
             {/* Community */}
