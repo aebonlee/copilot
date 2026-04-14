@@ -11,5 +11,6 @@ export const FREE_ROUTES: string[] = [
   '/github-copilot',
   '/m365-copilot',
   '/automation',
+  '/prompt-eval',
   '/resources',
 ];
