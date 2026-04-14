@@ -32,6 +32,7 @@ interface GuidePageProps {
   seoDescription?: string;
   path: string;
   dataFiles: DataFile[];
+  ctaBanner?: React.ReactNode;
 }
 
 const markdownComponents = {
@@ -49,7 +50,7 @@ const markdownComponents = {
   },
 };
 
-export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, dataFiles }: GuidePageProps) {
+export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, dataFiles, ctaBanner }: GuidePageProps) {
   const { language } = useLanguage();
   const isKo = language === 'ko';
 
@@ -149,6 +150,7 @@ export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, 
               </ReactMarkdown>
             </div>
           </div>
+          {ctaBanner}
           <div className="guide-section-nav">
             <button disabled={activeIndex === 0} onClick={() => handleSelect(activeIndex - 1)}>
               <i className="fa-solid fa-chevron-left" /> {isKo ? '이전' : 'Previous'}
