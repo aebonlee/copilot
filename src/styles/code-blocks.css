@@ -116,6 +116,7 @@
 }
 .tip-box-content strong {
     display: block;
+    width: fit-content;
     margin-bottom: 4px;
 }
 
