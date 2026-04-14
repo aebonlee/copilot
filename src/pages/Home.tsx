@@ -12,22 +12,22 @@ export default function Home() {
 
   const carouselSlides = [
     {
-      title: isKo ? 'VS Code에서 AI 코드 완성 마스터' : 'Master AI Code Completion in VS Code',
+      title: isKo ? 'GitHub Copilot으로 코딩 생산성 극대화' : 'Maximize Coding Productivity with GitHub Copilot',
       description: isKo
-        ? '인라인 제안, 멀티라인 완성, Tab 수락 패턴까지 - Copilot 코드 완성의 모든 것을 배웁니다.'
-        : 'From inline suggestions to multi-line completion and Tab acceptance patterns.',
+        ? 'VS Code 코드 완성, Chat, CLI, Workspace까지 — 개발자를 위한 AI 코딩 어시스턴트의 모든 것'
+        : 'From VS Code completion, Chat, CLI to Workspace — everything about AI coding assistants for developers.',
     },
     {
-      title: isKo ? 'Copilot Chat으로 대화형 코딩' : 'Conversational Coding with Copilot Chat',
+      title: isKo ? 'M365 Copilot으로 업무 효율 혁신' : 'Revolutionize Work with M365 Copilot',
       description: isKo
-        ? 'Slash Commands, @participants, Agent Mode 등 Chat의 고급 기능을 마스터합니다.'
-        : 'Master advanced Chat features like Slash Commands, @participants, and Agent Mode.',
+        ? 'Word, Excel, PowerPoint, Outlook, Teams에서 AI가 문서 작성, 데이터 분석, 프레젠테이션을 자동화합니다.'
+        : 'AI automates document creation, data analysis, and presentations in Word, Excel, PPT, Outlook & Teams.',
     },
     {
-      title: isKo ? 'CLI & Workspace로 워크플로우 혁신' : 'Revolutionize Workflow with CLI & Workspace',
+      title: isKo ? 'Power Platform + Copilot Studio로 업무자동화' : 'Work Automation with Power Platform + Copilot Studio',
       description: isKo
-        ? '터미널에서의 Copilot CLI와 GitHub Copilot Workspace로 개발 생산성을 극대화합니다.'
-        : 'Maximize development productivity with Copilot CLI and GitHub Copilot Workspace.',
+        ? 'Power Automate, Power Apps, Power BI와 커스텀 Copilot으로 엔드투엔드 업무 워크플로우를 자동화합니다.'
+        : 'Automate end-to-end workflows with Power Automate, Power Apps, Power BI, and custom Copilots.',
     },
   ];
 
@@ -66,9 +66,9 @@ export default function Home() {
             <p className="section-subtitle">{t('features.subtitle')}</p>
           </div>
           <div className="features-grid">
-            <FeatureCard icon="fa-code" title={t('features.codeCompletion.title')} description={t('features.codeCompletion.desc')} />
-            <FeatureCard icon="fa-comments" title={t('features.copilotChat.title')} description={t('features.copilotChat.desc')} />
-            <FeatureCard icon="fa-terminal" title={t('features.cliWorkspace.title')} description={t('features.cliWorkspace.desc')} />
+            <FeatureCard icon="fa-code" title={t('features.githubCopilot.title')} description={t('features.githubCopilot.desc')} />
+            <FeatureCard icon="fa-file-word" title={t('features.m365Copilot.title')} description={t('features.m365Copilot.desc')} />
+            <FeatureCard icon="fa-gears" title={t('features.automation.title')} description={t('features.automation.desc')} />
             <FeatureCard icon="fa-users" title={t('features.community.title')} description={t('features.community.desc')} />
           </div>
         </div>
@@ -107,15 +107,15 @@ export default function Home() {
         <div className="container">
           <div className="stats-grid">
             <div className="stat-item">
-              <div className="stat-number">7+</div>
+              <div className="stat-number">13+</div>
               <div className="stat-label">{t('stats.guides')}</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">40+</div>
+              <div className="stat-number">80+</div>
               <div className="stat-label">{t('stats.topics')}</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">5</div>
+              <div className="stat-number">4</div>
               <div className="stat-label">{t('stats.categories')}</div>
             </div>
           </div>

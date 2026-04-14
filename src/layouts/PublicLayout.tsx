@@ -18,6 +18,12 @@ const CopilotCli = lazy(() => import('../pages/copilot-cli/CopilotCli'));
 const CopilotWorkspace = lazy(() => import('../pages/copilot-workspace/CopilotWorkspace'));
 const CopilotExtensions = lazy(() => import('../pages/copilot-extensions/CopilotExtensions'));
 const CopilotEnterprise = lazy(() => import('../pages/copilot-enterprise/CopilotEnterprise'));
+const M365Copilot = lazy(() => import('../pages/m365-copilot/M365Copilot'));
+const TeamsCopilot = lazy(() => import('../pages/teams-copilot/TeamsCopilot'));
+const WindowsCopilot = lazy(() => import('../pages/windows-copilot/WindowsCopilot'));
+const CopilotStudio = lazy(() => import('../pages/copilot-studio/CopilotStudio'));
+const PowerPlatform = lazy(() => import('../pages/power-platform/PowerPlatform'));
+const CopilotAutomation = lazy(() => import('../pages/copilot-automation/CopilotAutomation'));
 const CommunityHub = lazy(() => import('../pages/community/CommunityHub'));
 const Board = lazy(() => import('../pages/community/Board'));
 const BoardDetail = lazy(() => import('../pages/community/BoardDetail'));
@@ -45,6 +51,7 @@ export default function PublicLayout() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
+            {/* GitHub Copilot */}
             <Route path="/copilot-overview" element={<CopilotOverview />} />
             <Route path="/copilot-vscode" element={<CopilotVscode />} />
             <Route path="/copilot-chat" element={<CopilotChat />} />
@@ -52,6 +59,15 @@ export default function PublicLayout() {
             <Route path="/copilot-workspace" element={<CopilotWorkspace />} />
             <Route path="/copilot-extensions" element={<CopilotExtensions />} />
             <Route path="/copilot-enterprise" element={<CopilotEnterprise />} />
+            {/* M365 Copilot */}
+            <Route path="/m365-copilot" element={<M365Copilot />} />
+            <Route path="/teams-copilot" element={<TeamsCopilot />} />
+            {/* Automation */}
+            <Route path="/windows-copilot" element={<WindowsCopilot />} />
+            <Route path="/copilot-studio" element={<CopilotStudio />} />
+            <Route path="/power-platform" element={<PowerPlatform />} />
+            <Route path="/copilot-automation" element={<CopilotAutomation />} />
+            {/* Community */}
             <Route path="/community" element={<CommunityHub />} />
             <Route path="/community/:board" element={<Board />} />
             <Route path="/community/:board/write" element={<AuthGuard><BoardWrite /></AuthGuard>} />

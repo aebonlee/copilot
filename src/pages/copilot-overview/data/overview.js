@@ -1,12 +1,60 @@
 export default {
   id: 'overview',
   icon: 'fa-rocket',
-  title: 'GitHub Copilot 소개',
-  titleEn: 'Introduction to GitHub Copilot',
+  title: 'Microsoft Copilot 생태계',
+  titleEn: 'Microsoft Copilot Ecosystem',
   sections: [
     {
-      title: 'GitHub Copilot이란?',
-      titleEn: 'What is GitHub Copilot?',
+      title: 'Microsoft Copilot 생태계란?',
+      titleEn: 'What is the Microsoft Copilot Ecosystem?',
+      content: `**Microsoft Copilot**은 Microsoft가 제공하는 AI 어시스턴트 브랜드로, 개발부터 업무까지 다양한 제품에 통합되어 있습니다.
+
+### Copilot 제품군 총정리
+
+| 제품 | 대상 | 주요 기능 |
+|------|------|-----------|
+| **GitHub Copilot** | 개발자 | VS Code 코드 완성, Chat, CLI, Workspace |
+| **M365 Copilot** | 직장인 | Word, Excel, PPT, Outlook AI 자동화 |
+| **Teams Copilot** | 협업팀 | 회의 요약, 채팅 정리, 채널 관리 |
+| **Windows Copilot** | 일반 사용자 | OS 설정, 웹 검색, 이미지 생성 |
+| **Copilot Studio** | 빌더 | 커스텀 Copilot 빌드, 배포 |
+| **Power Platform** | 업무자동화 | Power Automate, Apps, BI |
+
+### 학습 경로 안내
+
+이 사이트에서는 위 모든 Copilot 제품을 체계적으로 학습할 수 있습니다:
+
+1. **GitHub Copilot** — 개발자를 위한 AI 코딩 어시스턴트 (7개 가이드)
+2. **M365 Copilot** — 업무용 AI (Word, Excel, PPT, Outlook, Teams)
+3. **자동화 도구** — Windows Copilot, Copilot Studio, Power Platform, 업무자동화 실전
+
+> 이 플랫폼은 Microsoft Copilot의 전체 생태계를 한곳에서 학습할 수 있도록 설계되었습니다.`,
+      contentEn: `**Microsoft Copilot** is Microsoft's AI assistant brand, integrated across various products from development to business operations.
+
+### Complete Copilot Product Lineup
+
+| Product | Target | Key Features |
+|---------|--------|-------------|
+| **GitHub Copilot** | Developers | VS Code completion, Chat, CLI, Workspace |
+| **M365 Copilot** | Office Workers | Word, Excel, PPT, Outlook AI automation |
+| **Teams Copilot** | Teams | Meeting summaries, chat organization |
+| **Windows Copilot** | General Users | OS settings, web search, image generation |
+| **Copilot Studio** | Builders | Custom Copilot building & deployment |
+| **Power Platform** | Automation | Power Automate, Apps, BI |
+
+### Learning Path Guide
+
+This site provides systematic learning for all Copilot products:
+
+1. **GitHub Copilot** — AI coding assistant for developers (7 guides)
+2. **M365 Copilot** — Business AI (Word, Excel, PPT, Outlook, Teams)
+3. **Automation Tools** — Windows Copilot, Copilot Studio, Power Platform, Work Automation
+
+> This platform is designed to help you learn the entire Microsoft Copilot ecosystem in one place.`,
+    },
+    {
+      title: 'GitHub Copilot 소개',
+      titleEn: 'Introduction to GitHub Copilot',
       content: `**GitHub Copilot**은 GitHub와 OpenAI가 공동 개발한 AI 기반 코딩 어시스턴트입니다.
 
 코드 에디터(VS Code, JetBrains 등)에 통합되어 실시간으로 코드를 제안하고, 자연어 설명을 코드로 변환하며, 개발 생산성을 획기적으로 향상시킵니다.
@@ -58,7 +106,22 @@ Supports **virtually all programming languages** including Python, JavaScript, T
 | **Business** | $19/사용자/월 | 조직 관리 + 정책 제어 |
 | **Enterprise** | $39/사용자/월 | 맞춤형 모델 + 보안 강화 |
 
-> 학생과 오픈소스 기여자는 **무료**로 Pro 플랜을 이용할 수 있습니다.`,
+### Microsoft 365 Copilot 요금제
+
+| 플랜 | 가격 | 대상 |
+|------|------|------|
+| **M365 Personal** | $20/월 | 개인 사용자 |
+| **M365 Business** | $30/사용자/월 | 비즈니스 사용자 |
+| **M365 Enterprise** | $30/사용자/월 | 대기업 (E3/E5 필요) |
+
+### Copilot Studio 요금제
+
+| 플랜 | 가격 | 설명 |
+|------|------|------|
+| **Per Message** | $0.01/메시지 | 사용량 기반 |
+| **M365 Copilot 포함** | 포함 | M365 구독에 포함 |
+
+> 학생과 오픈소스 기여자는 GitHub Copilot Pro를 **무료**로 이용할 수 있습니다.`,
       contentEn: `### GitHub Copilot Pricing Plans
 
 | Plan | Price | Target |
@@ -68,7 +131,22 @@ Supports **virtually all programming languages** including Python, JavaScript, T
 | **Business** | $19/user/mo | Org management + policy control |
 | **Enterprise** | $39/user/mo | Custom models + enhanced security |
 
-> Students and open-source contributors can use the **Pro plan for free**.`,
+### Microsoft 365 Copilot Pricing
+
+| Plan | Price | Target |
+|------|-------|--------|
+| **M365 Personal** | $20/mo | Individual users |
+| **M365 Business** | $30/user/mo | Business users |
+| **M365 Enterprise** | $30/user/mo | Large enterprises (E3/E5 required) |
+
+### Copilot Studio Pricing
+
+| Plan | Price | Description |
+|------|-------|-------------|
+| **Per Message** | $0.01/message | Usage-based |
+| **M365 Copilot Included** | Included | Included with M365 subscription |
+
+> Students and open-source contributors can use GitHub Copilot Pro for **free**.`,
     },
   ],
 };

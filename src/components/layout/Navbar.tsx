@@ -18,7 +18,7 @@ export default function Navbar() {
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showTooltips, setShowTooltips] = useState(false);
-  const [mobileCommExpanded, setMobileCommExpanded] = useState(false);
+  const [mobileExpandedGroup, setMobileExpandedGroup] = useState('');
   const colorPickerRef = useRef(null);
   const userMenuRef = useRef(null);
 
@@ -32,7 +32,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setMobileCommExpanded(false);
+    setMobileExpandedGroup('');
   }, [location.pathname]);
 
   useEffect(() => {
@@ -67,14 +67,50 @@ export default function Navbar() {
     navigate('/');
   }
 
+  function toggleMobileGroup(group: string) {
+    setMobileExpandedGroup(mobileExpandedGroup === group ? '' : group);
+  }
+
   const NAV_ITEMS = [
     { path: '/about', ko: 'About', en: 'About' },
-    { path: '/copilot-overview', ko: 'Copilot 개요', en: 'Overview' },
-    { path: '/copilot-vscode', ko: 'VS Code', en: 'VS Code' },
-    { path: '/copilot-chat', ko: 'Copilot Chat', en: 'Copilot Chat' },
-    { path: '/copilot-extensions', ko: 'Extensions', en: 'Extensions' },
-    { path: '/community', ko: '커뮤니티', en: 'Community', hasDropdown: true },
+    {
+      ko: 'GitHub Copilot', en: 'GitHub Copilot', hasDropdown: true, groupId: 'github',
+      children: [
+        { path: '/copilot-overview', ko: 'Copilot 개요', en: 'Overview', icon: 'fa-rocket', color: '#1B7F37' },
+        { path: '/copilot-vscode', ko: 'VS Code 연동', en: 'VS Code', icon: 'fa-code', color: '#007ACC' },
+        { path: '/copilot-chat', ko: 'Copilot Chat', en: 'Copilot Chat', icon: 'fa-comments', color: '#8B5CF6' },
+        { path: '/copilot-cli', ko: 'Copilot CLI', en: 'CLI', icon: 'fa-terminal', color: '#D97706' },
+        { path: '/copilot-workspace', ko: 'Workspace', en: 'Workspace', icon: 'fa-laptop-code', color: '#059669' },
+        { path: '/copilot-extensions', ko: 'Extensions', en: 'Extensions', icon: 'fa-puzzle-piece', color: '#E34F26' },
+        { path: '/copilot-enterprise', ko: 'Enterprise', en: 'Enterprise', icon: 'fa-building', color: '#4285F4' },
+      ],
+    },
+    {
+      ko: 'M365 Copilot', en: 'M365 Copilot', hasDropdown: true, groupId: 'm365',
+      children: [
+        { path: '/m365-copilot', ko: 'Word·Excel·PPT·Outlook', en: 'Word·Excel·PPT·Outlook', icon: 'fa-file-word', color: '#0078D4' },
+        { path: '/teams-copilot', ko: 'Teams Copilot', en: 'Teams Copilot', icon: 'fa-users-rectangle', color: '#6264A7' },
+      ],
+    },
+    {
+      ko: '자동화', en: 'Automation', hasDropdown: true, groupId: 'automation',
+      children: [
+        { path: '/windows-copilot', ko: 'Windows Copilot', en: 'Windows Copilot', icon: 'fa-desktop', color: '#00A4EF' },
+        { path: '/copilot-studio', ko: 'Copilot Studio', en: 'Copilot Studio', icon: 'fa-wand-magic-sparkles', color: '#742774' },
+        { path: '/power-platform', ko: 'Power Platform', en: 'Power Platform', icon: 'fa-bolt', color: '#0B556A' },
+        { path: '/copilot-automation', ko: '업무자동화 실전', en: 'Work Automation', icon: 'fa-gears', color: '#C4314B' },
+      ],
+    },
+    {
+      path: '/community', ko: '커뮤니티', en: 'Community', hasDropdown: true, groupId: 'community',
+      children: BOARDS.map(b => ({ path: `/community/${b.id}`, ko: b.nameKo, en: b.nameEn, icon: b.icon, color: b.color })),
+    },
   ];
+
+  function isGroupActive(item: any) {
+    if (item.children) return item.children.some((c: any) => location.pathname.startsWith(c.path));
+    return location.pathname.startsWith(item.path);
+  }
 
   return (
     <>
@@ -86,28 +122,38 @@ export default function Navbar() {
           </Link>
 
           <ul className="nav-links">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.path} className={`nav-item${item.hasDropdown ? ' has-dropdown' : ''}`}>
-                <Link
-                  to={item.path}
-                  className={`nav-link ${location.pathname.startsWith(item.path) ? 'active' : ''}`}
-                >
-                  {isKo ? item.ko : item.en}
-                  {item.hasDropdown && <i className="fa-solid fa-chevron-down nav-dropdown-icon" />}
-                </Link>
-                {item.hasDropdown && (
-                  <div className="nav-dropdown">
-                    {BOARDS.map((board) => (
-                      <Link
-                        key={board.id}
-                        to={`/community/${board.id}`}
-                        className="nav-dropdown-item"
-                      >
-                        <i className={`fa-solid ${board.icon}`} style={{ color: board.color, width: '18px' }} />
-                        {isKo ? board.nameKo : board.nameEn}
+            {NAV_ITEMS.map((item, idx) => (
+              <li key={idx} className={`nav-item${item.hasDropdown ? ' has-dropdown' : ''}`}>
+                {item.path && !item.children ? (
+                  <Link to={item.path} className={`nav-link ${location.pathname.startsWith(item.path) ? 'active' : ''}`}>
+                    {isKo ? item.ko : item.en}
+                  </Link>
+                ) : item.hasDropdown ? (
+                  <>
+                    {item.path ? (
+                      <Link to={item.path} className={`nav-link ${isGroupActive(item) ? 'active' : ''}`}>
+                        {isKo ? item.ko : item.en}
+                        <i className="fa-solid fa-chevron-down nav-dropdown-icon" />
                       </Link>
-                    ))}
-                  </div>
+                    ) : (
+                      <span className={`nav-link ${isGroupActive(item) ? 'active' : ''}`} style={{ cursor: 'default' }}>
+                        {isKo ? item.ko : item.en}
+                        <i className="fa-solid fa-chevron-down nav-dropdown-icon" />
+                      </span>
+                    )}
+                    <div className="nav-dropdown">
+                      {item.children!.map((child: any) => (
+                        <Link key={child.path} to={child.path} className="nav-dropdown-item">
+                          <i className={`fa-solid ${child.icon}`} style={{ color: child.color, width: '18px' }} />
+                          {isKo ? child.ko : child.en}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <Link to={item.path!} className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}>
+                    {isKo ? item.ko : item.en}
+                  </Link>
                 )}
               </li>
             ))}
@@ -189,29 +235,31 @@ export default function Navbar() {
 
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         <ul className="mobile-nav-links">
-          {NAV_ITEMS.map((item) =>
+          {NAV_ITEMS.map((item, idx) =>
             item.hasDropdown ? (
-              <li key={item.path} className="mobile-nav-group">
+              <li key={idx} className="mobile-nav-group">
                 <button
                   className="mobile-nav-link mobile-nav-group-toggle"
-                  onClick={() => setMobileCommExpanded(!mobileCommExpanded)}
+                  onClick={() => toggleMobileGroup(item.groupId!)}
                 >
                   {isKo ? item.ko : item.en}
-                  <i className={`fa-solid fa-chevron-down mobile-chevron${mobileCommExpanded ? ' expanded' : ''}`} />
+                  <i className={`fa-solid fa-chevron-down mobile-chevron${mobileExpandedGroup === item.groupId ? ' expanded' : ''}`} />
                 </button>
-                {mobileCommExpanded && (
+                {mobileExpandedGroup === item.groupId && (
                   <ul className="mobile-nav-sub">
-                    <li>
-                      <Link to="/community" className="mobile-nav-sub-link">
-                        <i className="fa-solid fa-grid-2" style={{ width: '18px' }} />
-                        {isKo ? '전체 게시판' : 'All Boards'}
-                      </Link>
-                    </li>
-                    {BOARDS.map((board) => (
-                      <li key={board.id}>
-                        <Link to={`/community/${board.id}`} className="mobile-nav-sub-link">
-                          <i className={`fa-solid ${board.icon}`} style={{ color: board.color, width: '18px' }} />
-                          {isKo ? board.nameKo : board.nameEn}
+                    {item.path && (
+                      <li>
+                        <Link to={item.path} className="mobile-nav-sub-link">
+                          <i className="fa-solid fa-grid-2" style={{ width: '18px' }} />
+                          {isKo ? '전체 보기' : 'View All'}
+                        </Link>
+                      </li>
+                    )}
+                    {item.children!.map((child: any) => (
+                      <li key={child.path}>
+                        <Link to={child.path} className="mobile-nav-sub-link">
+                          <i className={`fa-solid ${child.icon}`} style={{ color: child.color, width: '18px' }} />
+                          {isKo ? child.ko : child.en}
                         </Link>
                       </li>
                     ))}
@@ -219,8 +267,8 @@ export default function Navbar() {
                 )}
               </li>
             ) : (
-              <li key={item.path}>
-                <Link to={item.path} className="mobile-nav-link">
+              <li key={idx}>
+                <Link to={item.path!} className="mobile-nav-link">
                   {isKo ? item.ko : item.en}
                 </Link>
               </li>
