@@ -82,7 +82,7 @@
 
 /* ── Sidebar Groups (collapsible accordion) ── */
 .guide-nav-group {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 .guide-nav-group-toggle {
     display: flex;
@@ -90,13 +90,14 @@
     justify-content: space-between;
     gap: 8px;
     width: 100%;
-    padding: 10px 12px;
-    font-size: 14px;
-    font-weight: 600;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 700;
     color: var(--text-secondary);
-    background: none;
+    background: var(--bg-medium-gray);
     border: none;
-    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--border-medium);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     cursor: pointer;
     transition: var(--transition-base);
     font-family: inherit;
@@ -104,27 +105,46 @@
 }
 .guide-nav-group-toggle:hover {
     background: var(--bg-medium-gray);
+    border-left-color: var(--primary-blue);
     color: var(--text-primary);
 }
 .guide-nav-group-toggle.active {
-    color: var(--text-primary);
+    color: var(--primary-blue);
     font-weight: 700;
     background: rgba(66, 153, 225, 0.08);
+    border-left-color: var(--primary-blue);
 }
 .guide-nav-group-toggle .group-chevron {
-    font-size: 10px;
-    opacity: 0.5;
+    font-size: 9px;
+    opacity: 0.4;
     flex-shrink: 0;
 }
 .guide-nav-sub-list {
     list-style: none;
-    padding-left: 8px;
+    padding-left: 4px;
     margin-top: 2px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    border-left: 1px solid var(--border-light);
+    margin-left: 14px;
 }
 .guide-nav-link.guide-nav-sub {
-    padding-left: 16px;
+    padding-left: 14px;
     font-size: 13px;
+    position: relative;
+}
+.guide-nav-link.guide-nav-sub::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--border-medium);
+    transform: translateY(-50%);
+}
+.guide-nav-link.guide-nav-sub.active::before {
+    background: var(--text-white);
 }
 
 /* ── Content Area ── */
