@@ -144,7 +144,6 @@ export default function Navbar() {
                     <div className="nav-dropdown">
                       {item.children!.map((child: any) => (
                         <Link key={child.path} to={child.path} className="nav-dropdown-item">
-                          <i className={`fa-solid ${child.icon}`} style={{ color: child.color, width: '18px' }} />
                           {isKo ? child.ko : child.en}
                         </Link>
                       ))}
@@ -250,7 +249,6 @@ export default function Navbar() {
                     {item.path && (
                       <li>
                         <Link to={item.path} className="mobile-nav-sub-link">
-                          <i className="fa-solid fa-grid-2" style={{ width: '18px' }} />
                           {isKo ? '전체 보기' : 'View All'}
                         </Link>
                       </li>
@@ -258,7 +256,6 @@ export default function Navbar() {
                     {item.children!.map((child: any) => (
                       <li key={child.path}>
                         <Link to={child.path} className="mobile-nav-sub-link">
-                          <i className={`fa-solid ${child.icon}`} style={{ color: child.color, width: '18px' }} />
                           {isKo ? child.ko : child.en}
                         </Link>
                       </li>

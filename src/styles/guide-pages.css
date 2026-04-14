@@ -80,6 +80,30 @@
     flex-shrink: 0;
 }
 
+/* ── Sidebar Groups (multiple data files) ── */
+.guide-nav-group {
+    margin-bottom: 8px;
+}
+.guide-nav-group-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.guide-nav-sub-list {
+    list-style: none;
+    padding-left: 8px;
+}
+.guide-nav-link.guide-nav-sub {
+    padding-left: 20px;
+    font-size: 13px;
+}
+
 /* ── Content Area ── */
 .guide-content {
     padding: 40px 48px;
