@@ -1,4 +1,4 @@
-import{j as t,M as C,r as p}from"./markdown-CFpoqxyr.js";import{b as x}from"./vendor-D7XqJCDT.js";import{u as g}from"./index-ZkR4MYEP.js";import{S as j}from"./SEOHead-CWVpO3MN.js";import{T as v,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const f={id:"chat-basics",icon:"fa-comments",title:"Chat 기본",titleEn:"Chat Basics",sections:[{title:"Copilot Chat 시작하기",titleEn:"Getting Started with Copilot Chat",content:`### Copilot Chat이란?
+import{j as t,M as C,r as p}from"./markdown-CFpoqxyr.js";import{b as x}from"./vendor-D7XqJCDT.js";import{u as g}from"./index-DJAI8N3Z.js";import{S as j}from"./SEOHead-CWVpO3MN.js";import{T as v,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const f={id:"chat-basics",icon:"fa-comments",title:"Chat 기본",titleEn:"Chat Basics",sections:[{title:"Copilot Chat 시작하기",titleEn:"Getting Started with Copilot Chat",content:`### Copilot Chat이란?
 
 Copilot Chat은 VS Code에 내장된 대화형 AI 어시스턴트입니다. 코드 작성, 디버깅, 리팩토링, 테스트 생성 등 다양한 작업을 대화를 통해 수행할 수 있습니다.
 
