@@ -1,4 +1,4 @@
-import{j as o}from"./markdown-CFpoqxyr.js";import{G as t}from"./GuidePage-DRGN6Yzq.js";import"./vendor-D7XqJCDT.js";import"./index-BHZfekDS.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";import"./SEOHead-Sm0tfk7_.js";const i={id:"github-docs",icon:"fa-code",title:"GitHub Copilot",titleEn:"GitHub Copilot",sections:[{title:"GitHub Copilot 공식 문서",titleEn:"GitHub Copilot Official Docs",content:`GitHub Copilot의 공식 문서 및 가이드 모음입니다.
+import{j as o}from"./markdown-CFpoqxyr.js";import{G as t}from"./GuidePage-CJaFds7y.js";import"./vendor-D7XqJCDT.js";import"./index-BTY3MQRj.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";import"./SEOHead-Sm0tfk7_.js";const i={id:"github-docs",icon:"fa-code",title:"GitHub Copilot",titleEn:"GitHub Copilot",sections:[{title:"GitHub Copilot 공식 문서",titleEn:"GitHub Copilot Official Docs",content:`GitHub Copilot의 공식 문서 및 가이드 모음입니다.
 
 ### 핵심 문서
 
