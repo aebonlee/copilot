@@ -102,6 +102,19 @@ html[data-theme="dark"] .guide-nav-link.active {
     background: var(--primary-blue);
 }
 
+/* Guide Sidebar CTA */
+html[data-theme="dark"] .guide-sidebar-footer {
+    border-top-color: #334155;
+}
+html[data-theme="dark"] .guide-sidebar-cta.workshop {
+    background: linear-gradient(135deg, rgba(66,153,225,0.12), rgba(128,90,213,0.08));
+    border-color: rgba(66,153,225,0.25);
+}
+html[data-theme="dark"] .guide-sidebar-cta.practice {
+    background: linear-gradient(135deg, rgba(56,161,105,0.12), rgba(56,161,105,0.06));
+    border-color: rgba(56,161,105,0.25);
+}
+
 /* Code Blocks in Dark */
 html[data-theme="dark"] .inline-code {
     background: #334155;

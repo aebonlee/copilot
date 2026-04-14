@@ -19,6 +19,24 @@ export default function PromptEvalHub() {
         seoDescription="프롬프트 작성 기법, 평가 기준, 실전 예시 및 실습 가이드"
         path="/prompt-eval"
         dataFiles={[promptBasics, promptEvaluation, promptTechniques, promptExamples]}
+        sidebarFooter={
+          <>
+            <Link to="/prompt-eval/workshop" className="guide-sidebar-cta workshop">
+              <i className="fa-solid fa-wand-magic-sparkles" />
+              <div>
+                <strong>{isKo ? '프롬프트 작성 평가' : 'Writing Evaluation'}</strong>
+                <span>{isKo ? '자동 채점 & 수정 재평가' : 'Auto-score & re-evaluate'}</span>
+              </div>
+            </Link>
+            <Link to="/prompt-eval/practice" className="guide-sidebar-cta practice">
+              <i className="fa-solid fa-clipboard-check" />
+              <div>
+                <strong>{isKo ? '종합 실습 테스트' : 'Full Practice Test'}</strong>
+                <span>{isKo ? '퀴즈 + 평가 + 작성 (250점)' : 'Quiz + Eval + Write (250pts)'}</span>
+              </div>
+            </Link>
+          </>
+        }
         ctaBanner={
           <>
             <div className="prompt-practice-cta">

@@ -33,6 +33,7 @@ interface GuidePageProps {
   path: string;
   dataFiles: DataFile[];
   ctaBanner?: React.ReactNode;
+  sidebarFooter?: React.ReactNode;
 }
 
 const markdownComponents = {
@@ -50,7 +51,7 @@ const markdownComponents = {
   },
 };
 
-export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, dataFiles, ctaBanner }: GuidePageProps) {
+export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, dataFiles, ctaBanner, sidebarFooter }: GuidePageProps) {
   const { language } = useLanguage();
   const isKo = language === 'ko';
 
@@ -138,6 +139,11 @@ export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, 
               ))
             )}
           </ul>
+          {sidebarFooter && (
+            <div className="guide-sidebar-footer">
+              {sidebarFooter}
+            </div>
+          )}
         </aside>
         <div className="guide-content">
           <div className="guide-content-header">
