@@ -49,7 +49,7 @@ export default function Home() {
           </h1>
           <p className="hero-description">{t('hero.description')}</p>
           <div className="hero-actions">
-            <Link to="/copilot-overview" className="btn btn-primary-large">{t('hero.cta')}</Link>
+            <Link to="/github-copilot" className="btn btn-primary-large">{t('hero.cta')}</Link>
             <Link to="/about" className="btn btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.3)', color: '#fff' }}>
               {t('hero.ctaSecondary')}
             </Link>
@@ -146,7 +146,7 @@ export default function Home() {
         <div className="container">
           <h2 className="cta-title">{t('cta.title')}</h2>
           <p className="cta-description">{t('cta.description')}</p>
-          <Link to="/copilot-overview" className="btn btn-primary-large">{t('cta.button')}</Link>
+          <Link to="/github-copilot" className="btn btn-primary-large">{t('cta.button')}</Link>
         </div>
       </section>
     </>

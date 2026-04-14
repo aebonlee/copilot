@@ -4,7 +4,14 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { signOut } from '../../utils/auth';
-import { BOARDS } from '../../config/boards';
+
+const NAV_ITEMS = [
+  { path: '/about', ko: 'About', en: 'About' },
+  { path: '/github-copilot', ko: 'GitHub Copilot', en: 'GitHub Copilot' },
+  { path: '/m365-copilot', ko: 'M365 Copilot', en: 'M365 Copilot' },
+  { path: '/automation', ko: '업무자동화', en: 'Automation' },
+  { path: '/community', ko: '커뮤니티', en: 'Community' },
+];
 
 export default function Navbar() {
   const { mode, toggleTheme, colorTheme, setColorTheme, COLOR_OPTIONS } = useTheme();
@@ -18,7 +25,6 @@ export default function Navbar() {
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showTooltips, setShowTooltips] = useState(false);
-  const [mobileExpandedGroup, setMobileExpandedGroup] = useState('');
   const colorPickerRef = useRef(null);
   const userMenuRef = useRef(null);
 
@@ -32,13 +38,12 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setMobileExpandedGroup('');
   }, [location.pathname]);
 
   useEffect(() => {
-    function handleClickOutside(e) {
-      if (colorPickerRef.current && !colorPickerRef.current.contains(e.target)) setShowColorPicker(false);
-      if (userMenuRef.current && !userMenuRef.current.contains(e.target)) setShowUserMenu(false);
+    function handleClickOutside(e: MouseEvent) {
+      if (colorPickerRef.current && !(colorPickerRef.current as HTMLElement).contains(e.target as Node)) setShowColorPicker(false);
+      if (userMenuRef.current && !(userMenuRef.current as HTMLElement).contains(e.target as Node)) setShowUserMenu(false);
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -67,51 +72,6 @@ export default function Navbar() {
     navigate('/');
   }
 
-  function toggleMobileGroup(group: string) {
-    setMobileExpandedGroup(mobileExpandedGroup === group ? '' : group);
-  }
-
-  const NAV_ITEMS = [
-    { path: '/about', ko: 'About', en: 'About' },
-    {
-      ko: 'GitHub Copilot', en: 'GitHub Copilot', hasDropdown: true, groupId: 'github',
-      children: [
-        { path: '/copilot-overview', ko: 'Copilot 개요', en: 'Overview', icon: 'fa-rocket', color: '#1B7F37' },
-        { path: '/copilot-vscode', ko: 'VS Code 연동', en: 'VS Code', icon: 'fa-code', color: '#007ACC' },
-        { path: '/copilot-chat', ko: 'Copilot Chat', en: 'Copilot Chat', icon: 'fa-comments', color: '#8B5CF6' },
-        { path: '/copilot-cli', ko: 'Copilot CLI', en: 'CLI', icon: 'fa-terminal', color: '#D97706' },
-        { path: '/copilot-workspace', ko: 'Workspace', en: 'Workspace', icon: 'fa-laptop-code', color: '#059669' },
-        { path: '/copilot-extensions', ko: 'Extensions', en: 'Extensions', icon: 'fa-puzzle-piece', color: '#E34F26' },
-        { path: '/copilot-enterprise', ko: 'Enterprise', en: 'Enterprise', icon: 'fa-building', color: '#4285F4' },
-      ],
-    },
-    {
-      ko: 'M365 Copilot', en: 'M365 Copilot', hasDropdown: true, groupId: 'm365',
-      children: [
-        { path: '/m365-copilot', ko: 'Word·Excel·PPT·Outlook', en: 'Word·Excel·PPT·Outlook', icon: 'fa-file-word', color: '#0078D4' },
-        { path: '/teams-copilot', ko: 'Teams Copilot', en: 'Teams Copilot', icon: 'fa-users-rectangle', color: '#6264A7' },
-      ],
-    },
-    {
-      ko: '자동화', en: 'Automation', hasDropdown: true, groupId: 'automation',
-      children: [
-        { path: '/windows-copilot', ko: 'Windows Copilot', en: 'Windows Copilot', icon: 'fa-desktop', color: '#00A4EF' },
-        { path: '/copilot-studio', ko: 'Copilot Studio', en: 'Copilot Studio', icon: 'fa-wand-magic-sparkles', color: '#742774' },
-        { path: '/power-platform', ko: 'Power Platform', en: 'Power Platform', icon: 'fa-bolt', color: '#0B556A' },
-        { path: '/copilot-automation', ko: '업무자동화 실전', en: 'Work Automation', icon: 'fa-gears', color: '#C4314B' },
-      ],
-    },
-    {
-      path: '/community', ko: '커뮤니티', en: 'Community', hasDropdown: true, groupId: 'community',
-      children: BOARDS.map(b => ({ path: `/community/${b.id}`, ko: b.nameKo, en: b.nameEn, icon: b.icon, color: b.color })),
-    },
-  ];
-
-  function isGroupActive(item: any) {
-    if (item.children) return item.children.some((c: any) => location.pathname.startsWith(c.path));
-    return location.pathname.startsWith(item.path);
-  }
-
   return (
     <>
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -123,37 +83,13 @@ export default function Navbar() {
 
           <ul className="nav-links">
             {NAV_ITEMS.map((item, idx) => (
-              <li key={idx} className={`nav-item${item.hasDropdown ? ' has-dropdown' : ''}`}>
-                {item.path && !item.children ? (
-                  <Link to={item.path} className={`nav-link ${location.pathname.startsWith(item.path) ? 'active' : ''}`}>
-                    {isKo ? item.ko : item.en}
-                  </Link>
-                ) : item.hasDropdown ? (
-                  <>
-                    {item.path ? (
-                      <Link to={item.path} className={`nav-link ${isGroupActive(item) ? 'active' : ''}`}>
-                        {isKo ? item.ko : item.en}
-                        <i className="fa-solid fa-chevron-down nav-dropdown-icon" />
-                      </Link>
-                    ) : (
-                      <span className={`nav-link ${isGroupActive(item) ? 'active' : ''}`} style={{ cursor: 'default' }}>
-                        {isKo ? item.ko : item.en}
-                        <i className="fa-solid fa-chevron-down nav-dropdown-icon" />
-                      </span>
-                    )}
-                    <div className="nav-dropdown">
-                      {item.children!.map((child: any) => (
-                        <Link key={child.path} to={child.path} className="nav-dropdown-item">
-                          {isKo ? child.ko : child.en}
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                ) : (
-                  <Link to={item.path!} className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}>
-                    {isKo ? item.ko : item.en}
-                  </Link>
-                )}
+              <li key={idx} className="nav-item">
+                <Link
+                  to={item.path}
+                  className={`nav-link ${location.pathname.startsWith(item.path) ? 'active' : ''}`}
+                >
+                  {isKo ? item.ko : item.en}
+                </Link>
               </li>
             ))}
           </ul>
@@ -234,43 +170,13 @@ export default function Navbar() {
 
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         <ul className="mobile-nav-links">
-          {NAV_ITEMS.map((item, idx) =>
-            item.hasDropdown ? (
-              <li key={idx} className="mobile-nav-group">
-                <button
-                  className="mobile-nav-link mobile-nav-group-toggle"
-                  onClick={() => toggleMobileGroup(item.groupId!)}
-                >
-                  {isKo ? item.ko : item.en}
-                  <i className={`fa-solid fa-chevron-down mobile-chevron${mobileExpandedGroup === item.groupId ? ' expanded' : ''}`} />
-                </button>
-                {mobileExpandedGroup === item.groupId && (
-                  <ul className="mobile-nav-sub">
-                    {item.path && (
-                      <li>
-                        <Link to={item.path} className="mobile-nav-sub-link">
-                          {isKo ? '전체 보기' : 'View All'}
-                        </Link>
-                      </li>
-                    )}
-                    {item.children!.map((child: any) => (
-                      <li key={child.path}>
-                        <Link to={child.path} className="mobile-nav-sub-link">
-                          {isKo ? child.ko : child.en}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ) : (
-              <li key={idx}>
-                <Link to={item.path!} className="mobile-nav-link">
-                  {isKo ? item.ko : item.en}
-                </Link>
-              </li>
-            )
-          )}
+          {NAV_ITEMS.map((item, idx) => (
+            <li key={idx}>
+              <Link to={item.path} className="mobile-nav-link">
+                {isKo ? item.ko : item.en}
+              </Link>
+            </li>
+          ))}
         </ul>
         <div className="mobile-menu-actions">
           {isAuthenticated ? (

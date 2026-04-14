@@ -1,6 +1,7 @@
 /**
  * GuidePage — 공유 가이드 페이지 컴포넌트
- * 모든 학습 페이지에서 재사용. 사이드바에 섹션 목차 표시.
+ * 단일 데이터파일: 섹션 직접 표시
+ * 다중 데이터파일: 접이식 그룹 (클릭 시 확장/접기)
  */
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -62,6 +63,7 @@ export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, 
 
   const [activeIndex, setActiveIndex] = useState(0);
   const active = allSections[activeIndex];
+  const activeFileIndex = active?.fileIndex ?? 0;
 
   const handleSelect = (idx: number) => {
     setActiveIndex(idx);
@@ -91,28 +93,34 @@ export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, 
           <ul className="guide-nav">
             {hasMultipleFiles ? (
               dataFiles.map((df, dfIdx) => {
+                const isExpanded = dfIdx === activeFileIndex;
                 const startIdx = fileStartIndices[dfIdx];
                 return (
-                  <li key={df.id} className="guide-nav-group">
-                    <div className="guide-nav-group-title">
-                      <i className={`fa-solid ${df.icon} nav-icon`} />
+                  <li key={df.id} className={`guide-nav-group${isExpanded ? ' expanded' : ''}`}>
+                    <button
+                      className={`guide-nav-group-toggle${isExpanded ? ' active' : ''}`}
+                      onClick={() => handleSelect(startIdx)}
+                    >
                       {isKo ? df.title : df.titleEn}
-                    </div>
-                    <ul className="guide-nav-sub-list">
-                      {df.sections.map((sec, secIdx) => {
-                        const globalIdx = startIdx + secIdx;
-                        return (
-                          <li key={globalIdx} className="guide-nav-item">
-                            <button
-                              className={`guide-nav-link guide-nav-sub ${globalIdx === activeIndex ? 'active' : ''}`}
-                              onClick={() => handleSelect(globalIdx)}
-                            >
-                              {isKo ? sec.title : sec.titleEn}
-                            </button>
-                          </li>
-                        );
-                      })}
-                    </ul>
+                      <i className={`fa-solid fa-chevron-${isExpanded ? 'down' : 'right'} group-chevron`} />
+                    </button>
+                    {isExpanded && (
+                      <ul className="guide-nav-sub-list">
+                        {df.sections.map((sec, secIdx) => {
+                          const globalIdx = startIdx + secIdx;
+                          return (
+                            <li key={globalIdx} className="guide-nav-item">
+                              <button
+                                className={`guide-nav-link guide-nav-sub ${globalIdx === activeIndex ? 'active' : ''}`}
+                                onClick={() => handleSelect(globalIdx)}
+                              >
+                                {isKo ? sec.title : sec.titleEn}
+                              </button>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
                   </li>
                 );
               })

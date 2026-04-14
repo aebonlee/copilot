@@ -8,4 +8,7 @@ export const FREE_ROUTES: string[] = [
   '/community',
   '/community/*',
   '/copilot-overview',
+  '/github-copilot',
+  '/m365-copilot',
+  '/automation',
 ];

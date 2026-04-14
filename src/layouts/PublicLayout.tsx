@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import AuthGuard from '../components/AuthGuard';
@@ -11,19 +11,9 @@ const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const ForgotPassword = lazy(() => import('../pages/ForgotPassword'));
 const AboutPage = lazy(() => import('../pages/about/AboutPage'));
-const CopilotOverview = lazy(() => import('../pages/copilot-overview/CopilotOverview'));
-const CopilotVscode = lazy(() => import('../pages/copilot-vscode/CopilotVscode'));
-const CopilotChat = lazy(() => import('../pages/copilot-chat/CopilotChat'));
-const CopilotCli = lazy(() => import('../pages/copilot-cli/CopilotCli'));
-const CopilotWorkspace = lazy(() => import('../pages/copilot-workspace/CopilotWorkspace'));
-const CopilotExtensions = lazy(() => import('../pages/copilot-extensions/CopilotExtensions'));
-const CopilotEnterprise = lazy(() => import('../pages/copilot-enterprise/CopilotEnterprise'));
-const M365Copilot = lazy(() => import('../pages/m365-copilot/M365Copilot'));
-const TeamsCopilot = lazy(() => import('../pages/teams-copilot/TeamsCopilot'));
-const WindowsCopilot = lazy(() => import('../pages/windows-copilot/WindowsCopilot'));
-const CopilotStudio = lazy(() => import('../pages/copilot-studio/CopilotStudio'));
-const PowerPlatform = lazy(() => import('../pages/power-platform/PowerPlatform'));
-const CopilotAutomation = lazy(() => import('../pages/copilot-automation/CopilotAutomation'));
+const GitHubCopilotHub = lazy(() => import('../pages/GitHubCopilotHub'));
+const M365Hub = lazy(() => import('../pages/M365Hub'));
+const AutomationHub = lazy(() => import('../pages/AutomationHub'));
 const CommunityHub = lazy(() => import('../pages/community/CommunityHub'));
 const Board = lazy(() => import('../pages/community/Board'));
 const BoardDetail = lazy(() => import('../pages/community/BoardDetail'));
@@ -51,22 +41,23 @@ export default function PublicLayout() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
-            {/* GitHub Copilot */}
-            <Route path="/copilot-overview" element={<CopilotOverview />} />
-            <Route path="/copilot-vscode" element={<CopilotVscode />} />
-            <Route path="/copilot-chat" element={<CopilotChat />} />
-            <Route path="/copilot-cli" element={<CopilotCli />} />
-            <Route path="/copilot-workspace" element={<CopilotWorkspace />} />
-            <Route path="/copilot-extensions" element={<CopilotExtensions />} />
-            <Route path="/copilot-enterprise" element={<CopilotEnterprise />} />
-            {/* M365 Copilot */}
-            <Route path="/m365-copilot" element={<M365Copilot />} />
-            <Route path="/teams-copilot" element={<TeamsCopilot />} />
-            {/* Automation */}
-            <Route path="/windows-copilot" element={<WindowsCopilot />} />
-            <Route path="/copilot-studio" element={<CopilotStudio />} />
-            <Route path="/power-platform" element={<PowerPlatform />} />
-            <Route path="/copilot-automation" element={<CopilotAutomation />} />
+            {/* Hub Pages */}
+            <Route path="/github-copilot" element={<GitHubCopilotHub />} />
+            <Route path="/m365-copilot" element={<M365Hub />} />
+            <Route path="/automation" element={<AutomationHub />} />
+            {/* Old routes → redirect to hubs */}
+            <Route path="/copilot-overview" element={<Navigate to="/github-copilot" replace />} />
+            <Route path="/copilot-vscode" element={<Navigate to="/github-copilot" replace />} />
+            <Route path="/copilot-chat" element={<Navigate to="/github-copilot" replace />} />
+            <Route path="/copilot-cli" element={<Navigate to="/github-copilot" replace />} />
+            <Route path="/copilot-workspace" element={<Navigate to="/github-copilot" replace />} />
+            <Route path="/copilot-extensions" element={<Navigate to="/github-copilot" replace />} />
+            <Route path="/copilot-enterprise" element={<Navigate to="/github-copilot" replace />} />
+            <Route path="/teams-copilot" element={<Navigate to="/m365-copilot" replace />} />
+            <Route path="/windows-copilot" element={<Navigate to="/automation" replace />} />
+            <Route path="/copilot-studio" element={<Navigate to="/automation" replace />} />
+            <Route path="/power-platform" element={<Navigate to="/automation" replace />} />
+            <Route path="/copilot-automation" element={<Navigate to="/automation" replace />} />
             {/* Community */}
             <Route path="/community" element={<CommunityHub />} />
             <Route path="/community/:board" element={<Board />} />

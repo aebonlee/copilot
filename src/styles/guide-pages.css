@@ -80,27 +80,50 @@
     flex-shrink: 0;
 }
 
-/* ── Sidebar Groups (multiple data files) ── */
+/* ── Sidebar Groups (collapsible accordion) ── */
 .guide-nav-group {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
-.guide-nav-group-title {
+.guide-nav-group-toggle {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 8px;
-    padding: 8px 12px;
-    font-size: 13px;
-    font-weight: 700;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-base);
+    font-family: inherit;
+    text-align: left;
+}
+.guide-nav-group-toggle:hover {
+    background: var(--bg-medium-gray);
     color: var(--text-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
+}
+.guide-nav-group-toggle.active {
+    color: var(--text-primary);
+    font-weight: 700;
+    background: rgba(66, 153, 225, 0.08);
+}
+.guide-nav-group-toggle .group-chevron {
+    font-size: 10px;
+    opacity: 0.5;
+    flex-shrink: 0;
 }
 .guide-nav-sub-list {
     list-style: none;
     padding-left: 8px;
+    margin-top: 2px;
+    margin-bottom: 4px;
 }
 .guide-nav-link.guide-nav-sub {
-    padding-left: 20px;
+    padding-left: 16px;
     font-size: 13px;
 }
 
