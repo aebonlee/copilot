@@ -1,4 +1,4 @@
-import{j as e,M as m,r as g}from"./markdown-CFpoqxyr.js";import{b as E}from"./vendor-D7XqJCDT.js";import{u as j}from"./index-CQw3mLRZ.js";import{S as v}from"./SEOHead-BorQ4Gq5.js";import{T as h,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const C={id:"ext-overview",icon:"fa-puzzle-piece",title:"Extensions 개요",titleEn:"Extensions Overview",sections:[{title:"Copilot Extensions란?",titleEn:"What are Copilot Extensions?",content:`### GitHub Copilot Extensions
+import{j as e,M as m,r as g}from"./markdown-CFpoqxyr.js";import{b as E}from"./vendor-D7XqJCDT.js";import{u as j}from"./index-B57uzUC2.js";import{S as v}from"./SEOHead-CWVpO3MN.js";import{T as h,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const C={id:"ext-overview",icon:"fa-puzzle-piece",title:"Extensions 개요",titleEn:"Extensions Overview",sections:[{title:"Copilot Extensions란?",titleEn:"What are Copilot Extensions?",content:`### GitHub Copilot Extensions
 
 Copilot Extensions는 타사 도구와 서비스를 Copilot Chat에 직접 통합할 수 있는 확장 기능 시스템입니다.
 

@@ -1,4 +1,4 @@
-import{j as e,M as p,r as h}from"./markdown-CFpoqxyr.js";import{b as x}from"./vendor-D7XqJCDT.js";import{u as C}from"./index-CQw3mLRZ.js";import{S as b}from"./SEOHead-BorQ4Gq5.js";import{T as j,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const v={id:"cli-overview",icon:"fa-terminal",title:"CLI 개요",titleEn:"CLI Overview",sections:[{title:"Copilot CLI란?",titleEn:"What is Copilot CLI?",content:`### GitHub Copilot in the CLI
+import{j as e,M as p,r as h}from"./markdown-CFpoqxyr.js";import{b as x}from"./vendor-D7XqJCDT.js";import{u as C}from"./index-B57uzUC2.js";import{S as b}from"./SEOHead-CWVpO3MN.js";import{T as j,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const v={id:"cli-overview",icon:"fa-terminal",title:"CLI 개요",titleEn:"CLI Overview",sections:[{title:"Copilot CLI란?",titleEn:"What is Copilot CLI?",content:`### GitHub Copilot in the CLI
 
 Copilot CLI는 터미널에서 자연어로 명령어를 생성하고 설명을 받을 수 있는 도구입니다.
 

@@ -1,4 +1,4 @@
-import{j as e,M as m,r as x}from"./markdown-CFpoqxyr.js";import{b as j}from"./vendor-D7XqJCDT.js";import{u as f}from"./index-CQw3mLRZ.js";import{S as b}from"./SEOHead-BorQ4Gq5.js";import{T as h,C as u}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const C={id:"basics",icon:"fa-play",title:"기본 사용법",titleEn:"Basic Usage",sections:[{title:"코드 완성 기초",titleEn:"Code Completion Basics",content:`### 인라인 코드 제안
+import{j as e,M as m,r as x}from"./markdown-CFpoqxyr.js";import{b as j}from"./vendor-D7XqJCDT.js";import{u as f}from"./index-B57uzUC2.js";import{S as b}from"./SEOHead-CWVpO3MN.js";import{T as h,C as u}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const C={id:"basics",icon:"fa-play",title:"기본 사용법",titleEn:"Basic Usage",sections:[{title:"코드 완성 기초",titleEn:"Code Completion Basics",content:`### 인라인 코드 제안
 
 GitHub Copilot은 커서 위치에서 실시간으로 코드를 제안합니다.
 

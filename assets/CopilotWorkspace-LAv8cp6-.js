@@ -1,4 +1,4 @@
-import{j as e,M as x,r as g}from"./markdown-CFpoqxyr.js";import{b as v}from"./vendor-D7XqJCDT.js";import{u as j}from"./index-CQw3mLRZ.js";import{S as k}from"./SEOHead-BorQ4Gq5.js";import{T as h,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const C={id:"workspace-overview",icon:"fa-laptop-code",title:"Workspace 개요",titleEn:"Workspace Overview",sections:[{title:"Copilot Workspace란?",titleEn:"What is Copilot Workspace?",content:`### GitHub Copilot Workspace
+import{j as e,M as x,r as g}from"./markdown-CFpoqxyr.js";import{b as v}from"./vendor-D7XqJCDT.js";import{u as j}from"./index-B57uzUC2.js";import{S as k}from"./SEOHead-CWVpO3MN.js";import{T as h,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const C={id:"workspace-overview",icon:"fa-laptop-code",title:"Workspace 개요",titleEn:"Workspace Overview",sections:[{title:"Copilot Workspace란?",titleEn:"What is Copilot Workspace?",content:`### GitHub Copilot Workspace
 
 Copilot Workspace는 GitHub Issue에서 시작하여 AI가 코드 변경 사항을 계획하고 구현하는 AI 기반 개발 환경입니다.
 

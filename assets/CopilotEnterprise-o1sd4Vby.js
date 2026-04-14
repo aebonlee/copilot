@@ -1,4 +1,4 @@
-import{j as e,M as m,r as x}from"./markdown-CFpoqxyr.js";import{b as j}from"./vendor-D7XqJCDT.js";import{u as v}from"./index-CQw3mLRZ.js";import{S as E}from"./SEOHead-BorQ4Gq5.js";import{T as C,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const h={id:"enterprise-overview",icon:"fa-building",title:"Enterprise 개요",titleEn:"Enterprise Overview",sections:[{title:"Copilot Enterprise란?",titleEn:"What is Copilot Enterprise?",content:`### GitHub Copilot Enterprise
+import{j as e,M as m,r as x}from"./markdown-CFpoqxyr.js";import{b as j}from"./vendor-D7XqJCDT.js";import{u as v}from"./index-B57uzUC2.js";import{S as E}from"./SEOHead-CWVpO3MN.js";import{T as C,C as d}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const h={id:"enterprise-overview",icon:"fa-building",title:"Enterprise 개요",titleEn:"Enterprise Overview",sections:[{title:"Copilot Enterprise란?",titleEn:"What is Copilot Enterprise?",content:`### GitHub Copilot Enterprise
 
 Copilot Enterprise는 대규모 조직을 위한 GitHub Copilot의 프리미엄 플랜입니다.
 
