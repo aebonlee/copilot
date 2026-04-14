@@ -1,4 +1,4 @@
-import{j as e,M as g,r as A}from"./markdown-CFpoqxyr.js";import{b as P}from"./vendor-D7XqJCDT.js";import{u as h}from"./index-B57uzUC2.js";import{S as y}from"./SEOHead-CWVpO3MN.js";import{T as w,C as u}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const f={id:"automation-overview",icon:"fa-gears",title:"업무자동화 실전 가이드",titleEn:"Work Automation Guide",sections:[{title:"업무자동화 개요",titleEn:"Work Automation Overview",content:`Microsoft Copilot 생태계를 활용한 **업무자동화 전략**은 단순 반복 작업부터 복잡한 의사결정 프로세스까지, 조직의 생산성을 혁신적으로 변화시킵니다.
+import{j as e,M as g,r as A}from"./markdown-CFpoqxyr.js";import{b as P}from"./vendor-D7XqJCDT.js";import{u as h}from"./index-ZkR4MYEP.js";import{S as y}from"./SEOHead-CWVpO3MN.js";import{T as w,C as u}from"./TipBox-CN9Miv2V.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";const f={id:"automation-overview",icon:"fa-gears",title:"업무자동화 실전 가이드",titleEn:"Work Automation Guide",sections:[{title:"업무자동화 개요",titleEn:"Work Automation Overview",content:`Microsoft Copilot 생태계를 활용한 **업무자동화 전략**은 단순 반복 작업부터 복잡한 의사결정 프로세스까지, 조직의 생산성을 혁신적으로 변화시킵니다.
 
 ### 자동화 가능 업무 유형
 
