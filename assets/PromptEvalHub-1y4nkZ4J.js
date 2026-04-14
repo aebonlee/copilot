@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-CFpoqxyr.js";import{G as t}from"./GuidePage-CJaFds7y.js";import"./vendor-D7XqJCDT.js";import"./index-BTY3MQRj.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";import"./SEOHead-Sm0tfk7_.js";const o={id:"prompt-basics",icon:"fa-lightbulb",title:"프롬프트 기초",titleEn:"Prompt Fundamentals",sections:[{title:"프롬프트란 무엇인가",titleEn:"What is a Prompt",content:`AI 모델에게 원하는 결과를 얻기 위해 전달하는 입력 텍스트를 **프롬프트(Prompt)**라고 합니다.
+import{j as e}from"./markdown-CFpoqxyr.js";import{u as i}from"./index-_8LmK5Iq.js";import{G as n}from"./GuidePage-DB3DMglc.js";/* empty css                 */import{L as r}from"./vendor-D7XqJCDT.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";import"./SEOHead-Sm0tfk7_.js";const a={id:"prompt-basics",icon:"fa-lightbulb",title:"프롬프트 기초",titleEn:"Prompt Fundamentals",sections:[{title:"프롬프트란 무엇인가",titleEn:"What is a Prompt",content:`AI 모델에게 원하는 결과를 얻기 위해 전달하는 입력 텍스트를 **프롬프트(Prompt)**라고 합니다.
 
 ### 프롬프트의 정의
 
@@ -108,7 +108,7 @@ A prompt is not just a simple question — it's a **communication interface** wi
 | Is output format specified? | Table, list, code, etc. |
 | Are examples provided? | Include samples of desired output |
 
-> Prompt writing is not about "getting it perfect the first time" but about "iterative improvement."`}]},i={id:"prompt-evaluation",icon:"fa-clipboard-check",title:"평가 기준 & 루브릭",titleEn:"Evaluation Criteria & Rubrics",sections:[{title:"프롬프트 평가 기준",titleEn:"Prompt Evaluation Criteria",content:`프롬프트의 품질을 객관적으로 평가하기 위한 5대 평가 기준입니다.
+> Prompt writing is not about "getting it perfect the first time" but about "iterative improvement."`}]},s={id:"prompt-evaluation",icon:"fa-clipboard-check",title:"평가 기준 & 루브릭",titleEn:"Evaluation Criteria & Rubrics",sections:[{title:"프롬프트 평가 기준",titleEn:"Prompt Evaluation Criteria",content:`프롬프트의 품질을 객관적으로 평가하기 위한 5대 평가 기준입니다.
 
 ### 5대 평가 기준 (SCORE)
 
@@ -404,7 +404,7 @@ A prompt is not just a simple question — it's a **communication interface** wi
 | 5. Improve | Modify prompt and re-run | "Which elements should I strengthen?" |
 | 6. Record | Document successful patterns | "Can this be reused?" |
 
-> Prompt writing skill is not innate — it improves with repeated practice.`}]},n={id:"prompt-techniques",icon:"fa-wand-magic-sparkles",title:"프롬프트 기법",titleEn:"Prompt Techniques",sections:[{title:"핵심 프롬프트 기법",titleEn:"Core Prompt Techniques",content:`AI에서 효과적으로 사용되는 핵심 프롬프트 기법들을 소개합니다.
+> Prompt writing skill is not innate — it improves with repeated practice.`}]},c={id:"prompt-techniques",icon:"fa-wand-magic-sparkles",title:"프롬프트 기법",titleEn:"Prompt Techniques",sections:[{title:"핵심 프롬프트 기법",titleEn:"Core Prompt Techniques",content:`AI에서 효과적으로 사용되는 핵심 프롬프트 기법들을 소개합니다.
 
 ### 주요 프롬프트 기법 비교
 
@@ -750,7 +750,7 @@ A strategy that intentionally adds constraints to improve result quality.
 | Format | "2-3 sentences per section, bold key figures" |
 | Tone | "For executives, professional but easy to understand" |
 
-> Advanced strategies are most effective when applied after mastering fundamental techniques.`}]},r={id:"prompt-examples",icon:"fa-flask",title:"실전 예시 & 실습",titleEn:"Examples & Practice",sections:[{title:"GitHub Copilot 프롬프트 예시",titleEn:"GitHub Copilot Prompt Examples",content:`GitHub Copilot에서 실제 사용하는 프롬프트 예시와 평가입니다.
+> Advanced strategies are most effective when applied after mastering fundamental techniques.`}]},l={id:"prompt-examples",icon:"fa-flask",title:"실전 예시 & 실습",titleEn:"Examples & Practice",sections:[{title:"GitHub Copilot 프롬프트 예시",titleEn:"GitHub Copilot Prompt Examples",content:`GitHub Copilot에서 실제 사용하는 프롬프트 예시와 평가입니다.
 
 ### 코드 생성 프롬프트
 
@@ -1002,4 +1002,4 @@ A strategy that intentionally adds constraints to improve result quality.
 | Intermediate | Level 1 exercises SCORE 70+ | Basic prompt writing |
 | Beginner | Working on Level 1 | Early learning stage |
 
-> Practice grows faster with colleagues than alone. Actively use team exercises.`}]};function d(){return e.jsx(t,{seoTitle:"프롬프트평가",seoTitleEn:"Prompt Evaluation",seoDescription:"프롬프트 작성 기법, 평가 기준, 실전 예시 및 실습 가이드",path:"/prompt-eval",dataFiles:[o,i,n,r]})}export{d as default};
+> Practice grows faster with colleagues than alone. Actively use team exercises.`}]};function y(){const{language:o}=i(),t=o==="ko";return e.jsx(e.Fragment,{children:e.jsx(n,{seoTitle:"프롬프트평가",seoTitleEn:"Prompt Evaluation",seoDescription:"프롬프트 작성 기법, 평가 기준, 실전 예시 및 실습 가이드",path:"/prompt-eval",dataFiles:[a,s,c,l],ctaBanner:e.jsxs("div",{className:"prompt-practice-cta",children:[e.jsxs("div",{className:"prompt-practice-cta-text",children:[e.jsx("h3",{children:t?"프롬프트 실력을 테스트해보세요!":"Test your prompt skills!"}),e.jsx("p",{children:t?"선택형 퀴즈 + 프롬프트 평가 + 직접 작성까지, 250점 만점 실습을 진행하세요.":"Take a 250-point practice: quiz + evaluation + writing exercises."})]}),e.jsxs(r,{to:"/prompt-eval/practice",className:"prompt-practice-cta-btn",children:[e.jsx("i",{className:"fa-solid fa-pen-to-square"}),t?"실습 시작":"Start Practice"]})]})})})}export{y as default};

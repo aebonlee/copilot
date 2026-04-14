@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-CFpoqxyr.js";import{G as t}from"./GuidePage-CJaFds7y.js";import"./vendor-D7XqJCDT.js";import"./index-BTY3MQRj.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";import"./SEOHead-Sm0tfk7_.js";const o={id:"windows-overview",icon:"fa-desktop",title:"Windows Copilot",titleEn:"Windows Copilot",sections:[{title:"Windows Copilot이란?",titleEn:"What is Windows Copilot?",content:`Windows Copilot은 **Windows 11에 직접 통합된 AI 어시스턴트**입니다. 운영체제 수준에서 작동하며, 시스템 설정 변경부터 웹 검색, 문서 요약, 이미지 생성까지 다양한 작업을 자연어 대화로 처리할 수 있습니다.
+import{j as e}from"./markdown-CFpoqxyr.js";import{G as t}from"./GuidePage-DB3DMglc.js";import"./vendor-D7XqJCDT.js";import"./index-_8LmK5Iq.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";import"./SEOHead-Sm0tfk7_.js";const o={id:"windows-overview",icon:"fa-desktop",title:"Windows Copilot",titleEn:"Windows Copilot",sections:[{title:"Windows Copilot이란?",titleEn:"What is Windows Copilot?",content:`Windows Copilot은 **Windows 11에 직접 통합된 AI 어시스턴트**입니다. 운영체제 수준에서 작동하며, 시스템 설정 변경부터 웹 검색, 문서 요약, 이미지 생성까지 다양한 작업을 자연어 대화로 처리할 수 있습니다.
 
 ### 핵심 특징
 
