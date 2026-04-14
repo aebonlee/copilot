@@ -14,6 +14,7 @@ const AboutPage = lazy(() => import('../pages/about/AboutPage'));
 const GitHubCopilotHub = lazy(() => import('../pages/GitHubCopilotHub'));
 const M365Hub = lazy(() => import('../pages/M365Hub'));
 const AutomationHub = lazy(() => import('../pages/AutomationHub'));
+const ResourceLibrary = lazy(() => import('../pages/resources/ResourceLibrary'));
 const CommunityHub = lazy(() => import('../pages/community/CommunityHub'));
 const Board = lazy(() => import('../pages/community/Board'));
 const BoardDetail = lazy(() => import('../pages/community/BoardDetail'));
@@ -58,6 +59,8 @@ export default function PublicLayout() {
             <Route path="/copilot-studio" element={<Navigate to="/automation" replace />} />
             <Route path="/power-platform" element={<Navigate to="/automation" replace />} />
             <Route path="/copilot-automation" element={<Navigate to="/automation" replace />} />
+            {/* Resources */}
+            <Route path="/resources" element={<ResourceLibrary />} />
             {/* Community */}
             <Route path="/community" element={<CommunityHub />} />
             <Route path="/community/:board" element={<Board />} />
