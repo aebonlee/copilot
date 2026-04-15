@@ -23,6 +23,10 @@ const Board = lazy(() => import('../pages/community/Board'));
 const BoardDetail = lazy(() => import('../pages/community/BoardDetail'));
 const BoardWrite = lazy(() => import('../pages/community/BoardWrite'));
 const NotFound = lazy(() => import('../pages/NotFound'));
+const AdminLayout = lazy(() => import('./AdminLayout'));
+const AdminDashboard = lazy(() => import('../pages/admin/AdminDashboard'));
+const AdminUsers = lazy(() => import('../pages/admin/AdminUsers'));
+const AdminCoupons = lazy(() => import('../pages/admin/AdminCoupons'));
 
 function LoadingFallback() {
   return (
@@ -73,6 +77,12 @@ export default function PublicLayout() {
             <Route path="/community/:board" element={<Board />} />
             <Route path="/community/:board/write" element={<AuthGuard><BoardWrite /></AuthGuard>} />
             <Route path="/community/:board/:id" element={<BoardDetail />} />
+            {/* Admin */}
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="users" element={<AdminUsers />} />
+              <Route path="coupons" element={<AdminCoupons />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
