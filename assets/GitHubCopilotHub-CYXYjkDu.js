@@ -1,4 +1,4 @@
-import{j as t}from"./markdown-yTLi9BFZ.js";import{G as e}from"./GuidePage-CTf-Zh_V.js";import"./vendor-pKl97x9j.js";import"./index-DI-2omaM.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";import"./SEOHead-CNRY_VIP.js";const o={id:"overview",icon:"fa-rocket",title:"Microsoft Copilot 생태계",titleEn:"Microsoft Copilot Ecosystem",sections:[{title:"Microsoft Copilot 생태계란?",titleEn:"What is the Microsoft Copilot Ecosystem?",content:`**Microsoft Copilot**은 Microsoft가 제공하는 AI 어시스턴트 브랜드로, 개발부터 업무까지 다양한 제품에 통합되어 있습니다.
+import{j as t}from"./markdown-yTLi9BFZ.js";import{G as e}from"./GuidePage-Bu4Ut4y2.js";import"./vendor-pKl97x9j.js";import"./index-WCi1fRB1.js";import"./supabase-k82gbVKr.js";import"./pdf-ckwbz45p.js";import"./SEOHead-CNRY_VIP.js";const o={id:"overview",icon:"fa-rocket",title:"Microsoft Copilot 생태계",titleEn:"Microsoft Copilot Ecosystem",sections:[{title:"Microsoft Copilot 생태계란?",titleEn:"What is the Microsoft Copilot Ecosystem?",content:`**Microsoft Copilot**은 Microsoft가 제공하는 AI 어시스턴트 브랜드로, 개발부터 업무까지 다양한 제품에 통합되어 있습니다.
 
 ### Copilot 제품군 총정리
 
